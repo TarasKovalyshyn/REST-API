@@ -9,7 +9,7 @@ mongoose.set("strictQuery", true);
 mongoose
   .connect(DB_HOST)
   .then(() => {
-
+console.log('create database')
     app.listen(3000);
   })
   .catch((error) => {
