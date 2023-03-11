@@ -9,7 +9,7 @@ mongoose.set("strictQuery", true);
 mongoose
   .connect(DB_HOST)
   .then(() => {
-    console.log("success connect");
+    console.log("success connect to server");
     app.listen(3000);
   })
   .catch((error) => {
