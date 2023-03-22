@@ -1,7 +1,7 @@
 const { ctrlWrapper } = require("../../helpers");
 
 const register = require("./register");
-const login = register("./login.js");
+const login = require("./login.js");
 const getCurrent = require("./getCurrent");
 const logout = require("./logout");
 
