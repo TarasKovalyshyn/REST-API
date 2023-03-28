@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { handleMongooseError} = require("../helpers");
+const { handleMongooseError } = require("../helpers");
 const Joi = require("joi");
 
 // eslint-disable-next-line no-useless-escape
@@ -32,6 +32,10 @@ const userSchema = new Schema(
     token: {
       type: String,
       default: "",
+    },
+    avatarURL: {
+      type: String,
+      required: true,
     },
   },
   { versionKey: false, timestamps: true }
