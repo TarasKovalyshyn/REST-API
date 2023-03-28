@@ -5,6 +5,7 @@ const { User } = require("../../models/user");
 
 const verifyEmail = async (req, res) => {
   const { verificationCode } = req.params;
+  
   const user = await User.findOne({ verificationCode });
 
   if (!user) {

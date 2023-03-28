@@ -3,7 +3,7 @@ const { HttpError, sendEmail } = require("../../helpers");
 const bcrypt = require("bcrypt");
 const gravatar = require("gravatar");
 const { nanoid } = require("nanoid");
-const BASE_URL = process.env;
+const {BASE_URL} = process.env;
 
 const register = async (req, res) => {
   const { email, password } = req.body;
@@ -30,7 +30,7 @@ const register = async (req, res) => {
     html: `<a target="_blank" href="${BASE_URL}/api/auth/verify/${verificationCode}">
         Click verify email</a>`,
   };
-
+console.log(verifyEmail)
   await sendEmail(verifyEmail);
   
   res.status(201).json({

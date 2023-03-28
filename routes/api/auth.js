@@ -12,7 +12,9 @@ router.post(
   validateBody(schemas.registerSchema),
   authCtrls.register
 );
-router.get("/verify/:verificationCode", authCtrls.verifyEmail)
+router.get("/verify/:verificationCode", authCtrls.verifyEmail);
+
+router.post("/verify", validateBody(schemas.emailSchema), authCtrls.resendVerifyEmail);
 
 // singin
 router.post("/login", validateBody(schemas.loginSchema), authCtrls.login);
